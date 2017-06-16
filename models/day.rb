@@ -1,12 +1,11 @@
 require_relative('../db/sql_runner')
 
-class Burger
+class Day
 
-  attr_reader( :name, :restaurant_id, :id)
+  attr_reader( :id, :name)
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @restaurant_id = options['restaurant_id']
   end
 end
