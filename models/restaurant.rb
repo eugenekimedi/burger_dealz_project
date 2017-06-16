@@ -9,5 +9,15 @@ class Restaurant
     @name = options['name']
     @address = options['address']
   end
+
+  def save()
+    sql = "INSERT INTO restaurants (
+      name, address
+    ) VALUES (
+      '#{@name}', '#{@address}'
+    ) RETURNING *"
+    results = SqlRunner.run(sql)
+    @id = results.first()['id'].to_i
+  end
   
 end
