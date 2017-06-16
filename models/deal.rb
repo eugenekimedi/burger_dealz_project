@@ -19,4 +19,10 @@ class Deal
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
+
+  def self.all()
+    sql = "SELECT * FROM deals"
+    results = SqlRunner.run(sql)
+    return results { |hash| Deal.new(hash)}
+  end
 end

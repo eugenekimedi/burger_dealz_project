@@ -18,4 +18,11 @@ class Day
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
+
+  def self.all()
+    sql = "SELECT * FROM days"
+    results = SqlRunner.run(sql)
+    return results { |hash| Day.new(hash)}
+  end
+
 end

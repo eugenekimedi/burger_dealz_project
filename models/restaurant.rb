@@ -19,5 +19,11 @@ class Restaurant
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
+
+  def self.all()
+    sql = "SELECT * FROM restaurants"
+    results = SqlRunner.run(sql)
+    return results { |hash| Restaurant.new(hash)}
+  end
   
 end

@@ -19,4 +19,10 @@ class Burger
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
+
+  def self.all()
+    sql = "SELECT * FROM burgers"
+    results = SqlRunner.run(sql)
+    return results { |hash| Burger.new(hash)}
+  end
 end
