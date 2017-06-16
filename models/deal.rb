@@ -25,4 +25,9 @@ class Deal
     results = SqlRunner.run(sql)
     return results { |hash| Deal.new(hash)}
   end
+
+  def self.delete_all
+    sql = "DELETE FROM deals"
+    SqlRunner.run(sql)
+  end
 end

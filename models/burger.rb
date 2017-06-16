@@ -25,4 +25,9 @@ class Burger
     results = SqlRunner.run(sql)
     return results { |hash| Burger.new(hash)}
   end
+
+  def self.delete_all
+    sql = "DELETE FROM burgers"
+    SqlRunner.run(sql)
+  end
 end

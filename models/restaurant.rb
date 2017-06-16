@@ -25,5 +25,10 @@ class Restaurant
     results = SqlRunner.run(sql)
     return results { |hash| Restaurant.new(hash)}
   end
+
+  def self.delete_all
+    sql = "DELETE FROM restaurants"
+    SqlRunner.run(sql)
+  end
   
 end
