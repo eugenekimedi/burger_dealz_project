@@ -23,11 +23,11 @@ class Burger
   # def restaurant()
 
   # end
-  
+
   def self.all()
     sql = "SELECT * FROM burgers"
     results = SqlRunner.run(sql)
-    return results { |hash| Burger.new(hash)}
+    return results.map { |hash| Burger.new(hash)}
   end
 
   def self.delete_all
