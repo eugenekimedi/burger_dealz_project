@@ -9,7 +9,7 @@
   <% for burger in @burgers %>
   <tr>
     <td><%= burger.name %></td>
-    <td><%= burger.restaurant_id %></td>
+    <td><%= burger.restaurant.name %></td>
   </tr>
   <% end %>
 </table>

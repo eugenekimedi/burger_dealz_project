@@ -20,6 +20,12 @@ class Burger
     @id = results.first()['id'].to_i
   end
 
+  def restaurant()
+    sql = "SELECT DISTINCT * FROM restaurants"
+    restaurant_hash = SqlRunner.run(sql).first
+    result = Restaurant.new(restaurant_hash)
+    return result
+  end
 
   def self.all()
     sql = "SELECT * FROM burgers"

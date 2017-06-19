@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('restaurant.rb')
 
 class Deal
 
@@ -20,21 +21,33 @@ class Deal
     @id = results.first()['id'].to_i
   end
 
+  def burger()
+    sql = "SELECT DISTINCT * FROM burgers
+    INNER JOIN burger_deals
+    ON burger_deals.burger_id = burgers.id
+    where burger_deals.deal_id = #{@id}"
+    burger_hash = SqlRunner.run(sql).first
+    result = Burger.new(burger_hash)
+    return result
+  end
+
   def restaurant()
-    sql = "SELECT DISTINCT restaurants.* FROM restuarants
+    sql = "SELECT DISTINCT restaurants.* FROM restaurants
     INNER JOIN burgers
     ON restaurants.id = burgers.restaurant_id
     INNER JOIN burger_deals
     ON burger_deals.burger_id = burgers.id
     where burger_deals.deal_id = #{@id}"
-    restaurants_hashes = SqlRunner.run(sql)
-    result = restaurants_hashes.map {|restaurant_hash| Restaurant.new(restaurant_hash)}
+    restaurant_hash = SqlRunner.run(sql).first
+    result = Restaurant.new(restaurant_hash)
     return result
   end
+
   def self.all()
     sql = "SELECT * FROM deals"
     results = SqlRunner.run(sql)
-    return results { |hash| Deal.new(hash)}
+    # binding.pry
+    return results.map { |hash| Deal.new(hash)}
   end
 
   def self.delete_all

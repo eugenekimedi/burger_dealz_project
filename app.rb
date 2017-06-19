@@ -7,3 +7,4 @@ require_relative('controllers/deals_controller')
 get '/' do
   erb (:index)
 end
+

@@ -8,8 +8,8 @@
   </tr>
   <% for deal in @deals %>
   <tr>
-    <td><%= deal.burger_id %></td>
-    <td><%= .restaurant_id %></td>
+    <td><%= deal.burger.name %></td>
+    <td><%= deal.restaurant.name %></td>
   </tr>
   <% end %>
 </table>
