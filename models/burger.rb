@@ -20,9 +20,6 @@ class Burger
     @id = results.first()['id'].to_i
   end
 
-  # def restaurant()
-
-  # end
 
   def self.all()
     sql = "SELECT * FROM burgers"
