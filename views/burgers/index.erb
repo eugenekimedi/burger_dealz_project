@@ -1,0 +1,15 @@
+<h1>Burgers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Restaurant</th>
+  </tr>
+  <% for burger in @burgers %>
+  <tr>
+    <td><%= burger.name %></td>
+    <td><%= burger.restaurant_id %></td>
+  </tr>
+  <% end %>
+</table>

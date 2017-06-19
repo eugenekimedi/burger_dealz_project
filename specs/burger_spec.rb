@@ -2,12 +2,21 @@ require "minitest/autorun"
 require "minitest/rg"
 require_relative "../models/burger"
 require_relative "../models/restaurant"
-require_relative "../models/day"
-require_relative "../models/deal"
-require_relative "../db/seeds"
-require_relative "../db/sql_runner"
 
-class TestBurger < MiniTest::Test
-  
+# class TestBurger < MiniTest::Test
+#   def setup
+#     @burger  = Burger.new({
+#   'name' => 'Signature Bob',
+#   'restaurant_id' => @restaurant.id
+#   })
 
-end
+#     @restaurant = Restaurant.new({
+#       'name' => 'Bobs Burgers',
+#       'address' => '1 Bob Street'
+#     })
+#   end
+
+#   def test_name
+#     assert_equal('Signature Bob', burger1.name )
+#   end
+# end

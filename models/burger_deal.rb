@@ -20,6 +20,15 @@ class BurgerDeal
     @id = results.first()['id'].to_i
   end
 
+  def burger()
+    sql = "SELECT * FROM burgers b
+    INNER JOIN burger_deals bd
+    ON bd.burger_id = b.id
+    WHERE b.id = #{@burger_id}"
+    results = SqlRunner.run(sql)
+    return Burger.new(results.first)
+  end
+
   def self.all()
     sql = "SELECT * FROM burger_deals"
     results = SqlRunner.run(sql)
