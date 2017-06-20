@@ -21,7 +21,7 @@ class Restaurant
   end
   def burgers()
     sql = "SELECT DISTINCT * FROM burgers
-      WHERE burger.restaurant_id = #{@id}"
+      WHERE burgers.restaurant_id = #{@id}"
     burger_hash = SqlRunner.run(sql)
     result = burger_hash.map{|burger| Burger.new(burger) }
     return result

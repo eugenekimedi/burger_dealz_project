@@ -97,7 +97,7 @@ burger5.save
 
 
 deal1 = Deal.new({
-  'name' => 'Monday Madness',
+  'name' => 'Buy 4 Get 1 Free',
   'day_id' => day1.id
   })
 deal2 = Deal.new({
@@ -105,15 +105,15 @@ deal2 = Deal.new({
   'day_id' => day2.id
   })
 deal3 = Deal.new({
-  'name' => 'Wacky Wednesdays',
+  'name' => '-30% Wednesdays',
   'day_id' => day3.id
   })
 deal4 = Deal.new({
-  'name' => 'Thirsty Thursdays',
+  'name' => '341 Thursdays',
   'day_id' => day4.id
   })
 deal5 = Deal.new({
-  'name' => 'Free Fridays',
+  'name' => 'Buy 1 Get 2 Free Fridays',
   'day_id' => day5.id
   })
 
@@ -124,7 +124,7 @@ deal2.save
 deal3.save
 deal4.save
 deal5.save
-deal6.save
+
 
 burger_deal1 = BurgerDeal.new({
   'burger_id' => burger1.id,

@@ -6,3 +6,7 @@ get '/deals' do
   @deals = Deal.all()
   erb ( :"deals/index")
 end
+
+get '/deals/new' do
+  erb (:"deals/new")
+end
