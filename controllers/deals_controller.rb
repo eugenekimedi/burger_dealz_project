@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/deal.rb')
+require_relative('../models/burger_deal.rb')
 
 get '/deals' do
   @deals = Deal.all()
@@ -14,6 +15,9 @@ get '/deals/new' do
 end
 
 post '/deals' do
-  Deal.new(params).save
+  deal=Deal.new(params).save
+  params['deal_id'] = deal
+  BurgerDeal.new(params).save
   redirect to '/deals'
 end
+# have to put a BurgerDeal.new with the id of Deal as the params

@@ -4,12 +4,9 @@
   <% @deals.each do |deal| %>
   <div>
     <p>Deal Name: <%= deal.name %></p>
-    <p>Restaurant:<% deal.restaurants.each do |restaurant|%> <%= restaurant.name %><% end %></p>
-    <p>Burgers: <% deal.burgers.each do |burger|%>
-       <ul>
-         <li><%=burger.name %></li>
-       </ul>       
-      <% end %>
+    <p>Restaurant:<%= deal.restaurant.name %></p>
+    <p>Burgers: <%= deal.burger.name%>
+
     </p>
     <p>Available Day: <%= deal.day.name %></p>
   </div>

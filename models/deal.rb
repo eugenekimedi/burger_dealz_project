@@ -21,6 +21,7 @@ class Deal
     ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
+    return id
   end
 
   def day()
@@ -31,25 +32,25 @@ class Deal
     return result
   end
 
-  def burgers()
+  def burger()
     sql = "SELECT DISTINCT * FROM burgers
     INNER JOIN burger_deals
     ON burger_deals.burger_id = burgers.id
     WHERE burger_deals.deal_id = #{@id}"
-    burger_hash = SqlRunner.run(sql)
-    result = burger_hash.map{|burger| Burger.new(burger) }
+    burger_hash = SqlRunner.run(sql).first
+    result = Burger.new(burger_hash)
     return result
   end
 
-  def restaurants()
+  def restaurant()
     sql = "SELECT restaurants.* FROM restaurants
     INNER JOIN burgers
     ON restaurants.id = burgers.restaurant_id
     INNER JOIN burger_deals
     ON burger_deals.burger_id = burgers.id
     where burger_deals.deal_id = #{@id}"
-    restaurant_hash = SqlRunner.run(sql)
-    result = restaurant_hash.map{|restaurant| Restaurant.new(restaurant)}
+    restaurant_hash = SqlRunner.run(sql).first
+    result = Restaurant.new(restaurant_hash)
     return result
   end
 
