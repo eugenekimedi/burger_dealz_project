@@ -22,7 +22,7 @@ class Day
   def self.all()
     sql = "SELECT * FROM days"
     results = SqlRunner.run(sql)
-    return results { |hash| Day.new(hash)}
+    return results.map { |hash| Day.new(hash)}
   end
 
   def self.delete_all

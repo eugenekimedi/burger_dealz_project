@@ -1,0 +1,22 @@
+<h2>Add New Deal</h2>
+<form method="POST" action="/deals">
+
+      <label for="name">Deal Name:</label>
+      <input type="text" name="name" id="name">
+
+      <label for="burgers_select">Select Burger!</label>
+      <select name= "burger_id" id="burgers_select">
+      <% @burgers.each do |burger| %>
+        <option value<%= burger.id %>><%= burger.name.upcase %></option>
+      <% end %>
+      </select>
+
+      <label for="days_select">Select Day!</label>
+      <select name= "day_id" id="days_select">
+      <% @days.each do |day| %>
+        <option value<%= day.id %>><%= day.name.upcase %></option>
+      <% end %>
+      </select>
+
+      <input type="submit" name="Create Deal">
+</form>
