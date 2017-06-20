@@ -1,15 +1,18 @@
 <h1>Deals</h1>
 
-<table>
-  <tr>
-    <th>Burger</th>
-    <th></th>
-    <th>Restaurant</th>
-  </tr>
-  <% for deal in @deals %>
-  <tr>
-    <td><%= deal.burger.name %></td>
-    <td><%= deal.restaurant.name %></td>
-  </tr>
+<div>
+  <% @deals.each do |deal| %>
+  <div>
+    <p>Deal Name: <%= deal.name %></p>
+    <p>Restaurant:<% deal.restaurants.each do |restaurant|%> <%= restaurant.name %><% end %></p>
+    <p>Burgers: <% deal.burgers.each do |burger|%>
+       <ul>
+         <li><%=burger.name %></li>
+       </ul>       
+      <% end %>
+    </p>
+    <p>Available Day: <%= deal.day.name %></p>
+  </div>
+<hr>
   <% end %>
-</table>
+</div>
