@@ -12,3 +12,19 @@
   </tr>
   <% end %>
 </table>
+
+<div>
+  <% @restaurants.each do |restaurant| %>
+  <div>
+    <p>Name: <%= restaurant.name %></p>
+    <p>Address: <% restaurant.address %></p>
+    <p>Burgers: <% restaurant.burgers.each do |burger|%>
+       <ul>
+         <li><%=burger.name %></li>
+       </ul>       
+      <% end %>
+    </p>
+  </div>
+<hr>
+  <% end %>
+</div>

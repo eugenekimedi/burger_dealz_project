@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('restaurant.rb')
 require_relative('day.rb')
+require('pry-byebug')
 
 class Deal
 
@@ -41,7 +42,7 @@ class Deal
   end
 
   def restaurants()
-    sql = "SELECT DISTINCT * FROM restaurants
+    sql = "SELECT restaurants.* FROM restaurants
     INNER JOIN burgers
     ON restaurants.id = burgers.restaurant_id
     INNER JOIN burger_deals
