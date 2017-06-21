@@ -1,18 +1,19 @@
-<h1>Restaurants</h1>
 
-<div>
+
+<div class="Homepage">
+<h1>Restaurants</h1>
   <% @restaurants.each do |restaurant| %>
   <div>
     <p><%= restaurant.name %></p>
     <p>Address: <%= restaurant.address %></p>
     <p>Burgers: <% restaurant.burgers.each do |burger|%>
        <ul>
-         <li><%=burger.name %></li>
+         <%=burger.name %>
        </ul>       
       <% end %>
     </p>
   </div>
 <hr>
   <% end %>
+  <a href="/restaurants/new">Add A New Restaurant!</a>
 </div>
-<a href="/restaurants/new">Add A New Restaurant!</a>

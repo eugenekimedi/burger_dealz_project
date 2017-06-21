@@ -2,7 +2,7 @@ body {
   background-image: url('/images/cat.gif');
   background-repeat: no-repeat;
   background-size: cover;
-  color:white;
+  color:black;
 }
 
 .nav ul{
@@ -25,5 +25,18 @@ img {
 
 .Homepage {
  text-align: center;
- color: blue;
+ background-color:#fff7e2;
+ width: 80%;
+ margin: 160px auto;
+ opacity: 0.95;
+ padding: 10px;
+}
+
+.dealpage {
+ text-align: center;
+ background-color:#fff7e2;
+ width: 80%;
+ margin: 80px auto;
+ opacity: 0.95;
+ padding: 10px;
 }
