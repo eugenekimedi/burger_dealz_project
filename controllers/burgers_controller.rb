@@ -13,7 +13,7 @@ get '/burgers/new' do
   erb (:"burgers/new")
 end
 
-post 'burgers' do
-  Burger.new(params.save)
+post '/burgers' do
+  Burger.new(params).save
   redirect to '/burgers'
 end
