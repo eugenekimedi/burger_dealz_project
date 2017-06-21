@@ -6,3 +6,9 @@ get '/restaurants' do
   @restaurants = Restaurant.all()
   erb ( :"restaurants/index")
 end
+
+post '/restaurants/:id' do
+  restaurant = Restarurant.new(params)
+  restaurant.update
+  redirect to "/restarurants/#{params['id']}"
+end
