@@ -8,8 +8,20 @@ get '/restaurants' do
   erb ( :"restaurants/index")
 end
 
+#new
+get '/restaurants/new' do
+  erb(:"restaurants/new")
+end
+
+#create
+post '/restaurants' do
+  Restaurant.new(params).save
+  redirect to '/restaurants'
+end
+
 #show
 get '/restaurants/:id' do
   @restaurant = Restaurant.find(params['id'])
   erb(:"restaurants/show")
 end
+
