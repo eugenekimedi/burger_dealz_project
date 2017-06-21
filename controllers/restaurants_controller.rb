@@ -11,5 +11,5 @@ end
 #show
 get '/restaurants/:id' do
   @restaurant = Restaurant.find(params['id'])
-  erb(:show)
+  erb(:"restaurants/show")
 end
