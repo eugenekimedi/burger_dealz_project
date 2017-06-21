@@ -1,6 +1,5 @@
+<div class="dealpage">
 <h1>Deals</h1>
-
-<div>
   <% @deals.each do |deal| %>
   <div>
     <p>Deal Name: <%= deal.name %></p>
@@ -12,5 +11,5 @@
   </div>
 <hr>
   <% end %>
-</div>
 <a href="/deals/new">Add A New Deal~</a>
+</div>
