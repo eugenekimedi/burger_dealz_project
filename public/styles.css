@@ -1,6 +1,8 @@
 body {
-  background: dodgerblue;
-  color:black;
+  background-image: url('/images/cat.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
 }
 
 .nav ul{
@@ -21,3 +23,7 @@ img {
   /* border: 0 none; */
 }
 
+.Homepage {
+ text-align: center;
+ color: blue;
+}
