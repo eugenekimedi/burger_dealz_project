@@ -10,5 +10,5 @@ end
 post '/restaurants/:id' do
   restaurant = Restarurant.new(params)
   restaurant.update
-  redirect to "/restarurants/#{params['id']}"
+  redirect to "/restaurants/#{params['id']}"
 end

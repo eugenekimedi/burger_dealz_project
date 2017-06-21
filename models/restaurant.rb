@@ -27,10 +27,6 @@ class Restaurant
     return result
   end
 
-  def update
-    sql = "UPDATE restaurants SET name = '#{@name}', address = '#{@address}' WHERE id = #{@id}"
-    SqlRunner.run(sql)
-  end
 
   def self.all()
     sql = "SELECT * FROM restaurants"
