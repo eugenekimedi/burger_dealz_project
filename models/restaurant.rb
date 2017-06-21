@@ -27,6 +27,12 @@ class Restaurant
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM restaurants WHERE id = #{id}"
+    result = SqlRunner.run(sql).first
+    restaurant = Restaurant.new(result)
+    return restaurant
+  end
 
   def self.all()
     sql = "SELECT * FROM restaurants"
